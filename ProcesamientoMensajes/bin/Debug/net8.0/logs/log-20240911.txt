@@ -1,0 +1,105 @@
+2024-09-11 13:24:19.462 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-11 13:24:19.502 -05:00 [INF] Hosting environment: Production
+2024-09-11 13:24:19.505 -05:00 [INF] Content root path: D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\bin\Debug\net8.0
+2024-09-11 13:24:39.408 -05:00 [ERR] El controlador de mensajes encontró una excepción: Put token failed. status-code: 401, status-description: InvalidIssuer: Token issuer is invalid. TrackingId:5a6a4ba4-ff28-4cc2-be6b-a6a602bd5d40, SystemTracker:NoSystemTracker, Timestamp:2024-09-11T18:24:39.
+For troubleshooting information, see https://aka.ms/azsdk/net/servicebus/exceptions/troubleshoot..
+System.UnauthorizedAccessException: Put token failed. status-code: 401, status-description: InvalidIssuer: Token issuer is invalid. TrackingId:5a6a4ba4-ff28-4cc2-be6b-a6a602bd5d40, SystemTracker:NoSystemTracker, Timestamp:2024-09-11T18:24:39.
+For troubleshooting information, see https://aka.ms/azsdk/net/servicebus/exceptions/troubleshoot.
+   at Azure.Messaging.ServiceBus.Amqp.AmqpConnectionScope.CreateReceivingLinkAsync(String entityPath, String identifier, AmqpConnection connection, Uri endpoint, TimeSpan timeout, UInt32 prefetchCount, ServiceBusReceiveMode receiveMode, String sessionId, Boolean isSessionReceiver, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpConnectionScope.OpenReceiverLinkAsync(String identifier, String entityPath, TimeSpan timeout, UInt32 prefetchCount, ServiceBusReceiveMode receiveMode, String sessionId, Boolean isSessionReceiver, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.OpenReceiverLinkAsync(TimeSpan timeout, UInt32 prefetchCount, ServiceBusReceiveMode receiveMode, String identifier, CancellationToken cancellationToken)
+   at Microsoft.Azure.Amqp.FaultTolerantAmqpObject`1.OnCreateAsync(TimeSpan timeout, CancellationToken cancellationToken)
+   at Microsoft.Azure.Amqp.Singleton`1.GetOrCreateAsync(TimeSpan timeout, CancellationToken cancellationToken)
+   at Microsoft.Azure.Amqp.Singleton`1.GetOrCreateAsync(TimeSpan timeout, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.ReceiveMessagesAsyncInternal(Int32 maxMessages, Nullable`1 maxWaitTime, TimeSpan timeout, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.ReceiveMessagesAsyncInternal(Int32 maxMessages, Nullable`1 maxWaitTime, TimeSpan timeout, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.<>c.<<ReceiveMessagesAsync>b__44_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Azure.Messaging.ServiceBus.ServiceBusRetryPolicy.RunOperation[T1,TResult](Func`4 operation, T1 t1, TransportConnectionScope scope, CancellationToken cancellationToken, Boolean logTimeoutRetriesAsVerbose)
+   at Azure.Messaging.ServiceBus.ServiceBusRetryPolicy.RunOperation[T1,TResult](Func`4 operation, T1 t1, TransportConnectionScope scope, CancellationToken cancellationToken, Boolean logTimeoutRetriesAsVerbose)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.ReceiveMessagesAsync(Int32 maxMessages, Nullable`1 maxWaitTime, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.ServiceBusReceiver.ReceiveMessagesAsync(Int32 maxMessages, Nullable`1 maxWaitTime, Boolean isProcessor, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.ReceiverManager.ReceiveAndProcessMessagesAsync(CancellationToken cancellationToken)
+2024-09-11 13:24:39.435 -05:00 [INF] Contexto de excepción para la resolución de problemas: - Endpoint: asb-ceiba-xm-inf8469-dllo.servicebus.windows.net - Ruta de Entidad: xm-mfx-generacion-facturacion - Acción Ejecutada: xm-mfx-generacion-facturacion-ec6e7f95-8a1a-4f1e-b623-edb727dd1ff4
+2024-09-11 13:25:03.778 -05:00 [ERR] El controlador de mensajes encontró una excepción: Put token failed. status-code: 401, status-description: InvalidIssuer: Token issuer is invalid. TrackingId:5a6a4ba4-ff28-4cc2-be6b-a6a602bd5d40, SystemTracker:NoSystemTracker, Timestamp:2024-09-11T18:25:03.
+For troubleshooting information, see https://aka.ms/azsdk/net/servicebus/exceptions/troubleshoot..
+System.UnauthorizedAccessException: Put token failed. status-code: 401, status-description: InvalidIssuer: Token issuer is invalid. TrackingId:5a6a4ba4-ff28-4cc2-be6b-a6a602bd5d40, SystemTracker:NoSystemTracker, Timestamp:2024-09-11T18:25:03.
+For troubleshooting information, see https://aka.ms/azsdk/net/servicebus/exceptions/troubleshoot.
+   at Azure.Messaging.ServiceBus.Amqp.AmqpConnectionScope.CreateReceivingLinkAsync(String entityPath, String identifier, AmqpConnection connection, Uri endpoint, TimeSpan timeout, UInt32 prefetchCount, ServiceBusReceiveMode receiveMode, String sessionId, Boolean isSessionReceiver, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpConnectionScope.OpenReceiverLinkAsync(String identifier, String entityPath, TimeSpan timeout, UInt32 prefetchCount, ServiceBusReceiveMode receiveMode, String sessionId, Boolean isSessionReceiver, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.OpenReceiverLinkAsync(TimeSpan timeout, UInt32 prefetchCount, ServiceBusReceiveMode receiveMode, String identifier, CancellationToken cancellationToken)
+   at Microsoft.Azure.Amqp.FaultTolerantAmqpObject`1.OnCreateAsync(TimeSpan timeout, CancellationToken cancellationToken)
+   at Microsoft.Azure.Amqp.Singleton`1.GetOrCreateAsync(TimeSpan timeout, CancellationToken cancellationToken)
+   at Microsoft.Azure.Amqp.Singleton`1.GetOrCreateAsync(TimeSpan timeout, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.ReceiveMessagesAsyncInternal(Int32 maxMessages, Nullable`1 maxWaitTime, TimeSpan timeout, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.ReceiveMessagesAsyncInternal(Int32 maxMessages, Nullable`1 maxWaitTime, TimeSpan timeout, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.<>c.<<ReceiveMessagesAsync>b__44_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Azure.Messaging.ServiceBus.ServiceBusRetryPolicy.RunOperation[T1,TResult](Func`4 operation, T1 t1, TransportConnectionScope scope, CancellationToken cancellationToken, Boolean logTimeoutRetriesAsVerbose)
+   at Azure.Messaging.ServiceBus.ServiceBusRetryPolicy.RunOperation[T1,TResult](Func`4 operation, T1 t1, TransportConnectionScope scope, CancellationToken cancellationToken, Boolean logTimeoutRetriesAsVerbose)
+   at Azure.Messaging.ServiceBus.Amqp.AmqpReceiver.ReceiveMessagesAsync(Int32 maxMessages, Nullable`1 maxWaitTime, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.ServiceBusReceiver.ReceiveMessagesAsync(Int32 maxMessages, Nullable`1 maxWaitTime, Boolean isProcessor, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.ReceiverManager.ReceiveAndProcessMessagesAsync(CancellationToken cancellationToken)
+2024-09-11 13:25:03.783 -05:00 [INF] Contexto de excepción para la resolución de problemas: - Endpoint: asb-ceiba-xm-inf8469-dllo.servicebus.windows.net - Ruta de Entidad: xm-mfx-generacion-facturacion - Acción Ejecutada: xm-mfx-generacion-facturacion-ec6e7f95-8a1a-4f1e-b623-edb727dd1ff4
+2024-09-11 14:19:23.965 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-11 14:19:24.005 -05:00 [INF] Hosting environment: Production
+2024-09-11 14:19:24.007 -05:00 [INF] Content root path: D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\bin\Debug\net8.0
+2024-09-11 14:32:07.318 -05:00 [ERR] Hosting failed to start
+RabbitMQ.Client.Exceptions.OperationInterruptedException: The AMQP operation was interrupted: AMQP close-reason, initiated by Peer, code=406, text='PRECONDITION_FAILED - inequivalent arg 'durable' for queue 'generar-mensaje-cola' in vhost '/': received 'false' but current is 'true'', classId=50, methodId=10
+   at RabbitMQ.Client.Impl.SimpleBlockingRpcContinuation.GetReply(TimeSpan timeout)
+   at RabbitMQ.Client.Impl.ModelBase.QueueDeclare(String queue, Boolean passive, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   at RabbitMQ.Client.Impl.ModelBase.QueueDeclare(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   at RabbitMQ.Client.Impl.AutorecoveringModel.QueueDeclare(String queue, Boolean durable, Boolean exclusive, Boolean autoDelete, IDictionary`2 arguments)
+   at ProcesamientoMensajes.Procesadores.ProcesadorMensajeRabbitMQ.Iniciar() in D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\Procesadores\ProcesadorMensajeRabbitMQ.cs:line 41
+   at ProcesamientoMensajes.Worker.ExecuteAsync(CancellationToken stoppingToken) in D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\Worker.cs:line 10
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-09-11 14:33:35.565 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-11 14:33:35.600 -05:00 [INF] Hosting environment: Production
+2024-09-11 14:33:35.603 -05:00 [INF] Content root path: D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\bin\Debug\net8.0
+2024-09-11 14:40:10.145 -05:00 [INF] {
+  "tipoComando" : "GenerarMensajeCommand",
+  "contenido" : { "Mensaje" : "Hola si entro" }
+}
+2024-09-11 14:40:10.217 -05:00 [ERR] El controlador de mensajes encontró una excepción: The JSON value could not be converted to ProcesamientoMensajes.Enumeradores.TipoComandoEnumeracion. Path: $.tipoComando | LineNumber: 1 | BytePositionInLine: 41..
+System.Text.Json.JsonException: The JSON value could not be converted to ProcesamientoMensajes.Enumeradores.TipoComandoEnumeracion. Path: $.tipoComando | LineNumber: 1 | BytePositionInLine: 41.
+   at System.Text.Json.ThrowHelper.ThrowJsonException(String message)
+   at System.Text.Json.Serialization.Converters.EnumConverter`1.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at ProcesamientoMensajes.Procesadores.ProcesadorMensajeRabbitMQ.ManejarMensajeAsync(Object model, BasicDeliverEventArgs ea) in D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\Procesadores\ProcesadorMensajeRabbitMQ.cs:line 67
+2024-09-11 14:40:10.274 -05:00 [INF] Contexto de excepción para la resolución de problemas: - Ruta de Entidad: generar-mensaje-cola - Acción Ejecutada: generar-mensaje-cola
+2024-09-11 14:41:10.930 -05:00 [INF] {
+  "tipoComando" : "GenerarMensajeCommand",
+  "contenido" : { "Mensaje" : "Hola si entro" }
+}
+2024-09-11 14:42:11.109 -05:00 [ERR] El controlador de mensajes encontró una excepción: The JSON value could not be converted to ProcesamientoMensajes.Enumeradores.TipoComandoEnumeracion. Path: $.tipoComando | LineNumber: 1 | BytePositionInLine: 41..
+System.Text.Json.JsonException: The JSON value could not be converted to ProcesamientoMensajes.Enumeradores.TipoComandoEnumeracion. Path: $.tipoComando | LineNumber: 1 | BytePositionInLine: 41.
+   at System.Text.Json.ThrowHelper.ThrowJsonException(String message)
+   at System.Text.Json.Serialization.Converters.EnumConverter`1.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at ProcesamientoMensajes.Procesadores.ProcesadorMensajeRabbitMQ.ManejarMensajeAsync(Object model, BasicDeliverEventArgs ea) in D:\RepositorioTemporal\ProcesamientoMensajes\ProcesamientoMensajes\Procesadores\ProcesadorMensajeRabbitMQ.cs:line 67
+2024-09-11 14:42:11.120 -05:00 [INF] Contexto de excepción para la resolución de problemas: - Ruta de Entidad: generar-mensaje-cola - Acción Ejecutada: generar-mensaje-cola
+2024-09-11 14:42:12.440 -05:00 [INF] {
+  "tipoComando" : 0,
+  "contenido" : { "Mensaje" : "Hola si entro" }
+}
+2024-09-11 14:42:58.755 -05:00 [INF] {
+  "tipoComando" : 0,
+  "contenido" : { "Mensaje" : "Hola si entro" }
+}
+2024-09-11 14:44:04.959 -05:00 [INF] {
+  "tipoComando" : 0,
+  "contenido" : { "Mensaje" : "Hola si entro buenos dias" }
+}
