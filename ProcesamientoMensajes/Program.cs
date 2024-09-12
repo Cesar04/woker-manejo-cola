@@ -23,13 +23,19 @@ builder.Services.AddMediatR(cfg =>
 });
 
 builder.Logging.AgregarLogger(config);
-
 builder.Services.AddSingleton(Log.Logger);
-//builder.Services.AgregarProcesadorColaServiceBus(config);
+
+#region Configuración servicios de RabbitMQ
 builder.Services.AgregarProcesadorColaRabbitMQ(config);
-//builder.Services.AddSingleton<ProcesadorMensajeServiceBus>();
 builder.Services.AddSingleton<ProcesadorMensajeRabbitMQ>();
+#endregion
+
+#region Configuración servicios de Service bus
+//builder.Services.AddSingleton<ProcesadorMensajeServiceBus>();
+//builder.Services.AgregarProcesadorColaServiceBus(config);
+#endregion
+
 builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();
-host.Run();
+await host.RunAsync();

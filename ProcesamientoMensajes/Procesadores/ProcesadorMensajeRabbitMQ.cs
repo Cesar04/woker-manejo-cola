@@ -45,7 +45,7 @@ namespace ProcesamientoMensajes.Procesadores
                                  arguments: null);
 
             var consumer = new EventingBasicConsumer(_channel);
-            consumer.Received += async (model, ea) => await ManejarMensajeAsync(model, ea);
+            consumer.Received += async (model, ea) => await ManejarMensajeAsync(ea);
 
             _channel.BasicConsume(queue: _queueName, autoAck: false, consumer: consumer);
         }
@@ -55,7 +55,7 @@ namespace ProcesamientoMensajes.Procesadores
             _channel.Close();
         }
 
-        private async Task ManejarMensajeAsync(object? model, BasicDeliverEventArgs ea)
+        private async Task ManejarMensajeAsync(BasicDeliverEventArgs ea)
         {
             try
             {

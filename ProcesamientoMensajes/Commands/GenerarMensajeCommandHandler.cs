@@ -1,12 +1,13 @@
 ﻿using MediatR;
+using Serilog;
 
 namespace ProcesamientoMensajes.Commands
 {
-    public class GenerarMensajeCommandHandle : IRequestHandler<GenerarMensajeCommand, Unit>
+    public class GenerarMensajeCommandHandle(ILogger logger) : IRequestHandler<GenerarMensajeCommand, Unit>
     {
         public Task<Unit> Handle(GenerarMensajeCommand request, CancellationToken cancellationToken)
         {
-            Console.WriteLine(request.Mensaje);
+            logger.Information(request.Mensaje);
 
             return Task.FromResult(Unit.Value);
         }
