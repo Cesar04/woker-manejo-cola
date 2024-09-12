@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProcesamientoMensajes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88234e7571419e93aecafb0ba8824606274e56ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProcesamientoMensajes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProcesamientoMensajes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
