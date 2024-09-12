@@ -1,5 +1,4 @@
-﻿using Azure.Identity;
-using Azure.Messaging.ServiceBus;
+﻿using Azure.Messaging.ServiceBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RabbitMQ.Client;
@@ -10,11 +9,6 @@ namespace ProcesamientoMensajes.Extensiones
     {
         public static IServiceCollection AgregarProcesadorColaServiceBus(this IServiceCollection servicios, IConfiguration config)
         {
-            DefaultAzureCredentialOptions tokenOptions = new()
-            {
-                ManagedIdentityClientId = config.GetValue<string>("Cola:AksAgentpoolManagedIdentityClientId")
-            };
-
             var opcionesProcesador = new ServiceBusProcessorOptions
             {
                 MaxAutoLockRenewalDuration = TimeSpan.FromHours(config.GetValue<int>("Cola:DuracionRenovacionBloqueo"))
@@ -32,7 +26,7 @@ namespace ProcesamientoMensajes.Extensiones
             };
 
             var nombreCola = config.GetValue<string>("Cola:Nombre");
-            var clienteServicioCola = new ServiceBusClient(config.GetValue<string>("Cola:BaseUrl"), new DefaultAzureCredential(tokenOptions), clientOptions);
+            var clienteServicioCola = new ServiceBusClient(config.GetValue<string>("Cola:ConnectionString"), clientOptions);
 
             var procesadorMensajes = clienteServicioCola.CreateProcessor(nombreCola, opcionesProcesador);
             var manejadorMensajes = clienteServicioCola.CreateSender(nombreCola, new ServiceBusSenderOptions());
@@ -48,7 +42,7 @@ namespace ProcesamientoMensajes.Extensiones
             // Configura ConnectionFactory
             servicios.AddSingleton(sp =>
             {
-                var nombreCola = config.GetValue<string>("Cola:BaseUrl");
+                var nombreCola = config.GetValue<string>("Cola:ConnectionString");
                 var factory = new ConnectionFactory()
                 {
                     HostName = nombreCola
